@@ -12,8 +12,9 @@ import javax.persistence.ManyToOne;
 import java.util.Date;
 import java.util.UUID;
 
+
 @Entity
-@Data  @NoArgsConstructor  @AllArgsConstructor  @ToString
+@Data  @NoArgsConstructor  @AllArgsConstructor
 public class Wallet {
     @Id @GeneratedValue
     private UUID id;
@@ -22,4 +23,14 @@ public class Wallet {
     private String devise;
     @ManyToOne
     private Client client;
+
+    @Override
+    public String toString() {
+        return "Wallet{" +
+                "id=" + id +
+                ", solde" + solde +
+                ", date de création=" + dateCreation +
+                ", devise='" + devise + '\'' +
+                '}';
+    }
 }
