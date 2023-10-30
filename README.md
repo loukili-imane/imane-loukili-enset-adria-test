@@ -40,6 +40,8 @@
    ![image](https://github.com/loukili-imane/imane-loukili-enset-adria-test/assets/93887037/1ff4afd9-1ee8-43f8-a1fc-77f3bbcf2391)
 
 5. Développer et tester le micro-service wallet-service
+   ![image](https://github.com/loukili-imane/imane-loukili-enset-adria-test/assets/93887037/d0056e12-0c2d-4ece-b51c-71a8549802a0)
+
    #entités :
 ```
 @Entity
@@ -69,5 +71,44 @@ public class Wallet {
 ![image](https://github.com/loukili-imane/imane-loukili-enset-adria-test/assets/93887037/e2041f48-f1f2-4127-ac85-4e5c51bb8d5d)
 ![image](https://github.com/loukili-imane/imane-loukili-enset-adria-test/assets/93887037/995504aa-ab57-4ddd-850e-c48d94fc21d5)
 
-6. Développer et tester le micro-service transfer-service 
-7. Développer un simple frontend web pour l’application 
+6. Développer et tester le micro-service transfer-service
+```
+   @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Transfer {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Date date;
+    private Long sourceID;
+    private Long destinationID;
+    @Transient
+    private Wallet sourceWallet;
+    @Transient
+    private Wallet destinationWalet;
+    private Status status;
+}
+```
+```
+public enum Status {
+    PENDING,
+    VALIDATED,
+    REJECTED
+}
+```
+```
+server.port=8082
+spring.application.name=transfer-service
+#MySql database configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/transfer?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.show-sql=true
+#Discovery configuration
+spring.cloud.discovery.enabled=true
+```
+8. Développer un simple frontend web pour l’application 
