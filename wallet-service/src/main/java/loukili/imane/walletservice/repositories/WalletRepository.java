@@ -11,8 +11,7 @@ import java.util.UUID;
 
 @RepositoryRestResource
 public interface WalletRepository extends JpaRepository<Wallet, UUID>{
-    @RestResource(path = "/{wallet}")
-    Wallet findWalletById(@Param("wallet") UUID id);
+    Wallet findWalletById(UUID id);
 
 
 }
