@@ -65,5 +65,8 @@ public class Wallet {
     private Client client;
 }
 ```
+![image](https://github.com/loukili-imane/imane-loukili-enset-adria-test/assets/93887037/e2041f48-f1f2-4127-ac85-4e5c51bb8d5d)
+![image](https://github.com/loukili-imane/imane-loukili-enset-adria-test/assets/93887037/995504aa-ab57-4ddd-850e-c48d94fc21d5)
+
 6. Développer et tester le micro-service transfer-service 
 7. Développer un simple frontend web pour l’application 
