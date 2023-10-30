@@ -18,7 +18,7 @@ public class Wallet {
     @Id @GeneratedValue
     private UUID id;
     private double solde;
-    private Date dateCréation;
+    private Date dateCreation;
     private String devise;
     @ManyToOne
     private Client client;
